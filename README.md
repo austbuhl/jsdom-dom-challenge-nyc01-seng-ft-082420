@@ -22,16 +22,28 @@ Add the following features one by one, refreshing the page to see your functiona
 > Note: These deliverables are written in the form of _User Stories_. They describe the features from the perspective of a user when they visit the page.
 
 1. As a user, I should see the timer increment every second once the page has loaded.
+
+  should be SetInterval(somefunctionthataddsasecond, 1000ms)
+
 2. As a user, I can manually increment and decrement the counter using the plus and minus buttons.
+plus minus on each button
+
 3. As a user, I can 'like' an individual number of the counter. I should see count of the number of 'likes' associated with that number.
+  when like button is hit(heart) grab the number from the counter and... display likes somehow
+
 4. As a user, I can pause the counter, which should 
 
   * pause the counter
+    stop counter
   * disable all buttons except the pause button
+    how do we disable buttons?
   * the pause button should then show the text "resume."
+    if counters running show pause, else (must be paused) and show resume
 
   When 'resume' is clicked, it should restart the counter and re-enable the buttons.
 5. As a user, I can leave comments on my gameplay, such as: "Wow, what a fun game this is."
+
+add comments to that list based on the input field
 
 ## Hint for the timer
 
