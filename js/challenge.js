@@ -22,10 +22,19 @@ minusBtn.addEventListener("click", subtractSecond)
 const likeBtn = document.getElementById('heart')
 
 likeBtn.addEventListener("click", function(e){
-  const likeLi = document.createElement('li')
   const likesUl = document.querySelector('.likes')
-  likeLi.textContent = counter.textContent
-  likesUl.append(likeLi)
+  const existing = likesUl.querySelectorAll(`li[data-counter *= "${counter.textContent}"]`)[0]
+  if (existing) {
+    existing.textContent = counter.textContent + `; likes: ${existing.likes++}`
+    
+  } else {
+    const likeLi = document.createElement('li')
+    likeLi.likes = 1
+    likeLi.textContent = counter.textContent + `; likes: ${likeLi.likes}`
+    likeLi.dataset.counter = counter.textContent
+    likesUl.append(likeLi)
+  
+  }
 })
 
 const pauseBtn = document.getElementById('pause')
